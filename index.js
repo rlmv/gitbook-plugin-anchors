@@ -20,7 +20,7 @@ var insertAnchors = function(section) {
 
 module.exports = {
     book: {
-        assets: "./book",
+        assets: ".",
         css: [ "plugin.css" ]
     },
     hooks: {
