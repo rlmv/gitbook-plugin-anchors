@@ -32,15 +32,5 @@ module.exports = {
 	    
             return page;
         }
-/*  var escapedText = text.toLowerCase().replace(/[^\w]+/g, '-');
-
-  return '<h' + level + '>'
-    + '<a name="' + escapedText + '" class="anchor" href="#' + escapedText + '"\
->'
-    + '<span class="fa fa-link"></span>'
-    + '</a>'
-    + text
-    + '</h' + level + '>';
-};*/
     }
 };
