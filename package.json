@@ -1,19 +1,20 @@
 {
-    "name": "gitbook-plugin",
-    "description": "Sample plugin for GitBook",
+    "name": "gitbook-plugin-anchors",
+    "description": "Add Github style heading anchors to your Gitbook",
     "main": "index.js",
-    "version": "0.0.2",
+    "version": "0.1.0",
+    "license": "Apache 2",
+    "author": "Bo Marchman <bo.marchman@gmail.com>",
     "engines": {
         "gitbook": "*"
     },
-    "homepage": "https://github.com/GitbookIO/plugin",
+    "homepage": "https://github.com/rlmv/gitbook-plugin-anchors",
     "repository": {
         "type": "git",
-        "url": "https://github.com/GitbookIO/plugin.git"
+        "url": "https://github.com/rlmv/gitbook-plugin-anchors.git"
     },
-    "license": "Apache 2",
     "bugs": {
-        "url": "https://github.com/GitbookIO/plugin/issues"
+        "url": "https://github.com/rlmv/gitbook-plugin-anchors/issues"
     },
     "dependencies": {
 	"cheerio": "*",
