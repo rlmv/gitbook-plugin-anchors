@@ -5,12 +5,7 @@ var _ = require('underscore');
 module.exports = {
     book: {
         assets: "./book",
-        js: [
-            "test.js"
-        ],
-        css: [
-            "plugin.css"
-        ],
+        css: [ "plugin.css" ]
     },
     hooks: {
 
