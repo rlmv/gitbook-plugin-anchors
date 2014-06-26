@@ -56,8 +56,6 @@ module.exports = {
 
         // Before html generation
         "page": function(page) {
-            // page.path is the path to the file
-            // page.content is a list of parsed sections
 	    
 	    sections = _.select(page.sections, function(section) {
 		return section.type == 'normal';
@@ -69,11 +67,10 @@ module.exports = {
 		$(':header').each(function(i, elem) {
 		    var header = $(elem);
 		    var id = header.attr('id');
-		    var link = cheerio.load('<a name="' + id + '"' 
-				+ 'class="anchor" href="#' + id + '"'
-				+ '<span class="fa fa-link"></span>'
-				+ '</a>')
-		    header.prepend(link.root());
+		    header.prepend('<a name="' + id + '" class="anchor" ' 
+				   + 'href="#' + id + '">' 
+				   + '<span class="fa fa-link"></span>'
+				   + '</a>');
 		});
 		section.content = $.html();
 	    });
