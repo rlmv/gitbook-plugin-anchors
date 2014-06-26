@@ -28,7 +28,7 @@ module.exports = {
 	    
 	    sections = _.select(page.sections, function(section) {
 		return section.type == 'normal';
-	    }); // pluck all normal sections -- are they ever not normal?
+	    }); // pluck all normal sections -- as opposed to exercises?
 
 	    _.forEach(sections, insertAnchors);
 
