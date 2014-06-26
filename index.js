@@ -6,7 +6,7 @@ var _ = require('underscore');
 var insertAnchors = function(section) {
     
     var $ = cheerio.load(section.content);
-
+    
     $(':header').each(function(i, elem) {
 	var header = $(elem);
 	var id = header.attr('id');
