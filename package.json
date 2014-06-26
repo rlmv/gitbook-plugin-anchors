@@ -14,5 +14,9 @@
     "license": "Apache 2",
     "bugs": {
         "url": "https://github.com/GitbookIO/plugin/issues"
+    },
+    "dependencies": {
+	"cheerio": "*",
+	"underscore": "*"
     }
 }

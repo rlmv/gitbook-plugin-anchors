@@ -1,3 +1,7 @@
+
+var cheerio = require('cheerio');
+var _ = require('underscore');
+
 module.exports = {
     book: {
         assets: "./book",
@@ -54,12 +58,38 @@ module.exports = {
         "page": function(page) {
             // page.path is the path to the file
             // page.content is a list of parsed sections
+	    
+	    sections = _.select(page.sections, function(section) {
+		return section.type == 'normal';
+	    }); // pluck all normal sections -- are they ever not normal?
 
-            // Example:
-            //page.content.unshift({type: "normal", content: "<h1>Title</h1>"})
-
+	    _.forEach(sections, function(section) {
+	
+		var $ = cheerio.load(section.content);
+		$(':header').each(function(i, elem) {
+		    var header = $(elem);
+		    var id = header.attr('id');
+		    var link = cheerio.load('<a name="' + id + '"' 
+				+ 'class="anchor" href="#' + id + '"'
+				+ '<span class="fa fa-link"></span>'
+				+ '</a>')
+		    header.prepend(link.root());
+		});
+		section.content = $.html();
+	    });
+	    
             return page;
         },
+/*  var escapedText = text.toLowerCase().replace(/[^\w]+/g, '-');
+
+  return '<h' + level + '>'
+    + '<a name="' + escapedText + '" class="anchor" href="#' + escapedText + '"\
+>'
+    + '<span class="fa fa-link"></span>'
+    + '</a>'
+    + text
+    + '</h' + level + '>';
+};*/
 
         // After html generation
         "page:after": function(page) {
@@ -69,7 +99,6 @@ module.exports = {
             // Example:
             //page.content = "<h1>Title</h1>\n" + page.content;
             // -> This title will be added before the html tag so not visible in the browser
-
             return page;
         }
     }
