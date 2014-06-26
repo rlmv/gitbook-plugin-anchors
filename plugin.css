@@ -1,7 +1,10 @@
 
+a.anchor {
+    color: inherit !important;
+}
+
 a.anchor span {
     margin-left: -25px;
-    color:  black;
     font-size: 15px;
     display: none;
 }
