@@ -10,7 +10,7 @@ var insertAnchors = function(section) {
     $(':header').each(function(i, elem) {
 	var header = $(elem);
 	var id = header.attr('id');
-	header.prepend('<a name="' + id + '" class="anchor" ' 
+	header.prepend('<a name="' + id + '" class="plugin-anchor" ' 
 		       + 'href="#' + id + '">' 
 		       + '<span class="fa fa-link"></span>'
 		       + '</a>');
