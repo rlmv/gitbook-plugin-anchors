@@ -13,7 +13,7 @@ a.plugin-anchor {
 
 a.plugin-anchor span {
     margin-left: -25px;
-    font-size: 15px;
+    font-size: 15px !important;
 }
 
 h1, h2, h3, h4, h5, h6 {
