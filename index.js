@@ -1,12 +1,17 @@
 var cheerio = require('cheerio');
 var _ = require('lodash');
+var slug = require('github-slugid');
 
 // insert anchor link into section
 function insertAnchors(content) {
     var $ = cheerio.load(content);
     $(':header').each(function(i, elem) {
         var header = $(elem);
-        var id = header.attr('id');
+        var id = header.attr("id");
+        if (!id) {
+            id = slug(header.text());
+            header.attr("id", id);
+        }
         header.prepend('<a name="' + id + '" class="plugin-anchor" '
                    + 'href="#' + id + '">'
                    + '<span class="fa fa-link"></span>'

@@ -18,6 +18,7 @@
     },
     "dependencies": {
         "cheerio": "*",
-        "lodash": "*"
+        "lodash": "*",
+        "github-slugid": "1.0.1"
     }
 }
