@@ -9,7 +9,7 @@ function insertAnchors(content) {
         var id = header.attr('id');
         header.prepend('<a name="' + id + '" class="plugin-anchor" '
                    + 'href="#' + id + '">'
-                   + '<span class="fa fa-link"></span>'
+                   + '<i class="fa fa-link" aria-hidden="true"></i>'
                    + '</a>');
     });
     return $.html();
