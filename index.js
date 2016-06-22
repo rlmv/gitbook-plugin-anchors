@@ -27,13 +27,7 @@ module.exports = {
     },
     hooks: {
         "page": function(page) {
-            page.sections = _.map(page.sections, function(section) {
-                if (section.type != 'normal') return section;
-
-                section.content = insertAnchors(section.content);
-                return section;
-            });
-
+            page.content = insertAnchors(page.content);
             return page;
         }
     }
