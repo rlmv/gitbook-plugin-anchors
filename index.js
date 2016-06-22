@@ -1,5 +1,4 @@
 var cheerio = require('cheerio');
-var _ = require('lodash');
 var slug = require('github-slugid');
 
 // insert anchor link into section
