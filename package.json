@@ -2,7 +2,7 @@
     "name": "gitbook-plugin-anchors",
     "description": "Add Github style heading anchors to your Gitbook",
     "main": "index.js",
-    "version": "0.6.0",
+    "version": "0.7.0",
     "license": "Apache-2.0",
     "author": "Bo Marchman <bo.marchman@gmail.com>",
     "engines": {
